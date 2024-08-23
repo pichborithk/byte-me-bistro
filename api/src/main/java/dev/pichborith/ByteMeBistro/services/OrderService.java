@@ -15,8 +15,9 @@ public class OrderService {
     private final OrderMapper orderMapper;
 
     public List<OrderResponse> getAll() {
-        return orderRepo.findAllWithUser().stream().map(orderMapper::toOrderResponse).toList();
+        return orderRepo.findAllWithUser()
+                        .stream()
+                        .map(orderMapper::toOrderResponse)
+                        .toList();
     }
-
-
 }
