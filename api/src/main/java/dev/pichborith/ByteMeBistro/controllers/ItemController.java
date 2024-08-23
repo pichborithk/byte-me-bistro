@@ -1,8 +1,8 @@
 package dev.pichborith.ByteMeBistro.controllers;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.MenuItemResponse;
+import dev.pichborith.ByteMeBistro.models.MenuItem.ItemResponse;
 import dev.pichborith.ByteMeBistro.models.ResponseFrom;
-import dev.pichborith.ByteMeBistro.services.MenuItemService;
+import dev.pichborith.ByteMeBistro.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/menu")
-public class MenuItemController {
+@RequestMapping("/api/items")
+public class ItemController {
 
     @Autowired
-    private MenuItemService menuItemService;
+    private ItemService itemService;
 
     @GetMapping
-    public ResponseEntity<ResponseFrom<List<MenuItemResponse>>> getMenu() {
-        var items = menuItemService.getAll();
-        var response = new ResponseFrom<List<MenuItemResponse>>(
+    public ResponseEntity<ResponseFrom<List<ItemResponse>>> getMenu() {
+        var items = itemService.getAll();
+        var response = new ResponseFrom<List<ItemResponse>>(
             "Get all items in Menu successful", items);
         return ResponseEntity.ok(response);
     }

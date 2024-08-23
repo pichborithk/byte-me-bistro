@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.models.order;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.MenuItem;
+import dev.pichborith.ByteMeBistro.models.MenuItem.Item;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +20,7 @@ public class OrderItem {
     @Id
     @ManyToOne
     @JoinColumn(name = "menu_item_id")
-    private MenuItem menuItem;
+    private Item item;
 
     private int quantity;
 

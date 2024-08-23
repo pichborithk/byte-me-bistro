@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS orders_items;
 DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS menu_items;
+DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS reservations;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS categories;
@@ -15,7 +15,7 @@ CREATE TABLE roles (
 -- Users Table: Many-to-One with roles
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
+    username VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     role VARCHAR(50) REFERENCES roles(name)
 );
@@ -26,8 +26,8 @@ CREATE TABLE categories (
     name VARCHAR(255) UNIQUE NOT NULL
 );
 
--- Menu Items Table: Many-to-One with categories
-CREATE TABLE menu_items (
+-- Items Table: Many-to-One with categories
+CREATE TABLE items (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
@@ -45,9 +45,9 @@ CREATE TABLE orders (
 -- OrderItems Junction Table: Many-to-Many of orders and items
 CREATE TABLE orders_items (
     order_id INTEGER REFERENCES orders(id),
-    menu_item_id INTEGER REFERENCES menu_items(id),
+    item_id INTEGER REFERENCES items(id),
     quantity INTEGER NOT NULL,
-    PRIMARY KEY (order_id, menu_item_id)
+    PRIMARY KEY (order_id, item_id)
 );
 
 -- Reservations Table: Many-to-One with users
