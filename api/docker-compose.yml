@@ -1,0 +1,43 @@
+services:
+  postgres:
+    container_name: bmb_pg_db
+    image: postgres:15-bullseye
+    environment:
+      POSTGRES_DB: byte-me-bistro-dev
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - bmb_pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - byte-me-bistro-network
+
+  app:
+    container_name: bmb_api
+    image: byte-me-bistro-api
+    build: ./
+    depends_on:
+      - postgres
+    environment:
+      SERVER_PORT: 1337
+      SCHEMA_NAME: public
+      DB_URL: jdbc:postgresql://postgres:5432/byte-me-bistro-dev
+      DB_USERNAME: admin
+      DB_PASSWORD: password
+      SECRET_KEY: secret
+      TOKEN_EXPIRATION: 5
+    ports:
+      - "1337:1337"
+    networks:
+      - byte-me-bistro-network
+
+
+volumes:
+  bmb_pg_data:
+
+
+networks:
+  byte-me-bistro-network:
+    driver: bridge
