@@ -1,4 +1,4 @@
-package dev.pichborith.ByteMeBistro.models.item;
+package dev.pichborith.ByteMeBistro.models.MenuItem;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Entity
 @Table(name = "menu_items")
-public class Menu {
+public class MenuItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

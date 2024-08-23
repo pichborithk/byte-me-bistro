@@ -1,4 +1,4 @@
-package dev.pichborith.ByteMeBistro.models.item;
+package dev.pichborith.ByteMeBistro.models.MenuItem;
 
 import jakarta.persistence.*;
 import lombok.Data;
