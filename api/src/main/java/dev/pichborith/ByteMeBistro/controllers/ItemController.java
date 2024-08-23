@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.controllers;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.ItemResponse;
+import dev.pichborith.ByteMeBistro.models.Item.ItemResponse;
 import dev.pichborith.ByteMeBistro.models.ResponseFrom;
 import dev.pichborith.ByteMeBistro.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;

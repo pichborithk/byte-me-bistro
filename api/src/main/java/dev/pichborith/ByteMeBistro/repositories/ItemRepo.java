@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.repositories;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.Item;
+import dev.pichborith.ByteMeBistro.models.Item.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

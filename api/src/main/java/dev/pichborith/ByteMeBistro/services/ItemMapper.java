@@ -1,7 +1,7 @@
 package dev.pichborith.ByteMeBistro.services;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.Item;
-import dev.pichborith.ByteMeBistro.models.MenuItem.ItemResponse;
+import dev.pichborith.ByteMeBistro.models.Item.Item;
+import dev.pichborith.ByteMeBistro.models.Item.ItemResponse;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package dev.pichborith.ByteMeBistro.models.MenuItem;
+package dev.pichborith.ByteMeBistro.models.Item;
 
 import java.math.BigDecimal;
 

@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.services;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.ItemResponse;
+import dev.pichborith.ByteMeBistro.models.Item.ItemResponse;
 import dev.pichborith.ByteMeBistro.repositories.ItemRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

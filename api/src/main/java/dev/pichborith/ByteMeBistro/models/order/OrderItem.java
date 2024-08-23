@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.models.order;
 
-import dev.pichborith.ByteMeBistro.models.MenuItem.Item;
+import dev.pichborith.ByteMeBistro.models.Item.Item;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
