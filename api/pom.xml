@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dev.pichborith</groupId>
 	<artifactId>ByteMeBistro</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>ByteMeBistro</name>
 	<description>Byte Me Bistro API</description>
 	<url/>
