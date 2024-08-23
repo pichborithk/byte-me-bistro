@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.controllers;
 
-import dev.pichborith.ByteMeBistro.models.ResponseFrom;
+import dev.pichborith.ByteMeBistro.models.ResponseForm;
 import dev.pichborith.ByteMeBistro.models.order.OrderResponse;
 import dev.pichborith.ByteMeBistro.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,9 @@ public class OrderController {
     OrderService orderService;
 
     @GetMapping
-    public ResponseEntity<ResponseFrom<List<OrderResponse>>> getAllOrders() {
+    public ResponseEntity<ResponseForm<List<OrderResponse>>> getAllOrders() {
         var orders = orderService.getAll();
-        var response = new ResponseFrom<>("Get all orders successful", orders);
+        var response = new ResponseForm<>("Get all orders successful", orders);
         return ResponseEntity.ok(response);
     }
 }
