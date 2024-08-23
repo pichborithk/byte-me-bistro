@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -25,4 +26,6 @@ public class Order {
 
     private Timestamp createdAt;
 
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 }
