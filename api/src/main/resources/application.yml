@@ -17,7 +17,7 @@ spring:
     open-in-view: false
     properties:
       hibernate:
-        default_schema: ${SCHEMA}
+        default_schema: ${DB_SCHEMA}
   #    show-sql: true
 
   sql:
