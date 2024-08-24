@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import steak from "../assets/images/steak.png";
-import logo from "../assets/images/bistrologo.png";
+import logo from "../assets/images/ByteMeBistro-2.png";
 
 const Home = () => {
   return (
     <div>
       <div className="w-full bg-primary">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-40 px-12 py-6">
-          <div className="flex h-full flex-col justify-between gap-12 text-left text-secondary">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-40 px-8 py-12">
+          <div className="flex h-full flex-col justify-between gap-12 pl-8 text-left text-secondary">
             <h1 className="text-6xl font-semibold">
               The Best Food You Will Ever Try.
             </h1>
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-secondary">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-24 px-12 py-40 text-primary">
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-24 px-8 py-40 text-primary">
           <img src={logo} alt="Logo" className="w-64" />
 
           <div className="flex flex-col justify-between gap-8">

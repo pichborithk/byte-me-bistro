@@ -5,7 +5,7 @@ const Root = () => {
   return (
     <>
       <Navbar />
-      <div className="mt-24">
+      <div className="mt-24 min-h-screen text-primary">
         <Outlet />
       </div>
       <ScrollToTop />

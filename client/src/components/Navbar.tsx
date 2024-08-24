@@ -1,17 +1,25 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/images/bistrologo.png";
+import logo from "../assets/images/ByteMeBistro-1.png";
 
 const Navbar = () => {
   return (
-    <header className="absolute top-0 w-full bg-[#F8EDED] shadow-md transition-colors duration-500 ease-in-out dark:shadow-slate-800">
-      <section className="mx-auto flex max-w-6xl items-center justify-between p-2">
-        <img src={logo} alt="logo web site" className="max-h-20" />
+    <header className="absolute top-0 w-full shadow-md transition-colors duration-500 ease-in-out dark:shadow-slate-800">
+      <section className="mx-auto flex max-w-7xl items-center justify-between px-8 py-2">
+        <Link to="/">
+          <img src={logo} alt="logo web site" className="max-h-20" />
+        </Link>
         <nav className="relative flex items-center gap-6 font-jura text-2xl font-bold">
           <Link
             to="/menu"
             className="rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary"
           >
             Menu
+          </Link>
+          <Link
+            to="/dashboard"
+            className="rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary"
+          >
+            Dashboard
           </Link>
           {/* {token ? (
             <>
