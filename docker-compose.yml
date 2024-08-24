@@ -17,7 +17,7 @@ services:
   app:
     container_name: bmb_api
     image: byte-me-bistro-api
-    build: ./
+    build: ./api/
     depends_on:
       - postgres
     environment:
