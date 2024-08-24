@@ -16,7 +16,7 @@ const Navbar = () => {
             Menu
           </Link>
           <Link
-            to="/dashboard"
+            to="/orders"
             className="rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary"
           >
             Dashboard

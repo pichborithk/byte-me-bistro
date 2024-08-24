@@ -5,10 +5,10 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root";
 import {
-  Dashboard,
   ErrorPage,
   Home,
   Menu,
+  OrderItemList,
   OrderList,
   ReservationList,
   UserList,
@@ -29,22 +29,25 @@ const router = createBrowserRouter([
         element: <Menu />,
       },
       {
-        path: "dashboard",
-        element: <Dashboard />,
+        path: "orders",
         children: [
           {
             index: true,
             element: <OrderList />,
           },
           {
-            path: "reservations",
-            element: <ReservationList />,
-          },
-          {
-            path: "users",
-            element: <UserList />,
+            path: ":orderId",
+            element: <OrderItemList />,
           },
         ],
+      },
+      {
+        path: "reservations",
+        element: <ReservationList />,
+      },
+      {
+        path: "users",
+        element: <UserList />,
       },
     ],
   },
