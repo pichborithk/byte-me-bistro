@@ -19,7 +19,7 @@ public class OrderItem {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "menu_item_id")
+    @JoinColumn(name = "item_id")
     private Item item;
 
     private int quantity;
