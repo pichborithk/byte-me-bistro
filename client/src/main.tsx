@@ -4,7 +4,15 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root";
-import { ErrorPage, Home, Menu } from "./routes";
+import {
+  Dashboard,
+  ErrorPage,
+  Home,
+  Menu,
+  OrderList,
+  ReservationList,
+  UserList,
+} from "./routes";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +27,24 @@ const router = createBrowserRouter([
       {
         path: "menu",
         element: <Menu />,
+      },
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+        children: [
+          {
+            index: true,
+            element: <OrderList />,
+          },
+          {
+            path: "reservations",
+            element: <ReservationList />,
+          },
+          {
+            path: "users",
+            element: <UserList />,
+          },
+        ],
       },
     ],
   },
