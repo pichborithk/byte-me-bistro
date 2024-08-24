@@ -28,6 +28,7 @@ services:
       DB_PASSWORD: password
       SECRET_KEY: secret
       TOKEN_EXPIRATION: 5
+      CLIENT_URL: http://localhost:5173
     ports:
       - "1337:1337"
     networks:
