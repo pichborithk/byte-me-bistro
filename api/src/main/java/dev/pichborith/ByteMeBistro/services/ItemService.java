@@ -16,13 +16,16 @@ public class ItemService {
     private final ItemMapper itemMapper;
 
     public List<ItemResponse> getAll() {
-        var items = itemRepo.findAllWithCategory();
-        List<ItemResponse> response = new ArrayList<>();
-        for (var item : items) {
-            var itemResponse = itemMapper.toItemResponse(item);
-            response.add(itemResponse);
-        }
+//        var items = itemRepo.findAllWithCategory();
+//        List<ItemResponse> response = new ArrayList<>();
+//        for (var item : items) {
+//            var itemResponse = itemMapper.toItemResponse(item);
+//            response.add(itemResponse);
+//        }
+//
+//        return response;
 
-        return response;
+        return itemRepo.findAll().stream().map(itemMapper::toItemResponse)
+                       .toList();
     }
 }

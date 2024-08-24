@@ -15,7 +15,12 @@ public class ReservationService {
     private final ReservationMapper reservationMapper;
 
     public List<ReservationResponse> getAll() {
-        return reservationRepo.findAllWithUser()
+//        return reservationRepo.findAllWithUser()
+//                              .stream()
+//                              .map(reservationMapper::toReservationResponse)
+//                              .toList();
+
+        return reservationRepo.findAll()
                               .stream()
                               .map(reservationMapper::toReservationResponse)
                               .toList();
