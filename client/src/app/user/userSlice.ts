@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { User } from '../../types';
 import { getUser } from './userFetch';
-import { UserResponse } from './user.types';
+import { User, UserResponse } from './user.types';
 
 type UserState = {
   loading: boolean;
