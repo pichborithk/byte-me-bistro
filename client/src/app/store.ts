@@ -3,6 +3,7 @@ import { authReducer } from './auth/authSlice';
 import { userReducer } from './user/userSlice';
 import { itemReducer } from './item/itemSlice';
 import { orderReducer } from './order/orderSlice';
+import { reservationReducer } from './reservation/reservationSlice';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     user: userReducer,
     item: itemReducer,
     order: orderReducer,
+    reservation: reservationReducer,
   },
 });
 
