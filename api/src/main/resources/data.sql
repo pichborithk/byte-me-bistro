@@ -1,14 +1,14 @@
 -- Insert Roles
-INSERT INTO roles (name) VALUES ('CUSTOMER');
-INSERT INTO roles (name) VALUES ('STAFF');
+INSERT INTO roles (name) VALUES ('USER');
+INSERT INTO roles (name) VALUES ('EMPLOYEE');
 INSERT INTO roles (name) VALUES ('ADMIN');
 
 -- Insert Users
-INSERT INTO users (username, password, role) VALUES ('john', '123', 'CUSTOMER');
-INSERT INTO users (username, password, role) VALUES ('bo', '123', 'STAFF');
-INSERT INTO users (username, password, role) VALUES ('admin', '123', 'ADMIN');
-INSERT INTO users (username, password, role) VALUES ('kevin', '123', 'CUSTOMER');
-INSERT INTO users (username, password, role) VALUES ('david', '123', 'CUSTOMER');
+INSERT INTO users (username, password, role) VALUES ('john', '$2a$10$PohqQMKNuWD1/WBAX36IZODzC8ao4B42ee8fyLJNTrJAU6.6vwMo2', 'USER');
+INSERT INTO users (username, password, role) VALUES ('bo', '$2a$10$PohqQMKNuWD1/WBAX36IZODzC8ao4B42ee8fyLJNTrJAU6.6vwMo2', 'EMPLOYEE');
+INSERT INTO users (username, password, role) VALUES ('admin', '$2a$10$PohqQMKNuWD1/WBAX36IZODzC8ao4B42ee8fyLJNTrJAU6.6vwMo2', 'ADMIN');
+INSERT INTO users (username, password, role) VALUES ('kevin', '$2a$10$PohqQMKNuWD1/WBAX36IZODzC8ao4B42ee8fyLJNTrJAU6.6vwMo2', 'USER');
+INSERT INTO users (username, password, role) VALUES ('david', '$2a$10$PohqQMKNuWD1/WBAX36IZODzC8ao4B42ee8fyLJNTrJAU6.6vwMo2', 'USER');
 
 -- Insert Categories
 INSERT INTO categories (name) VALUES ('Appetizers');
