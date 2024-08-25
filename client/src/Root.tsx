@@ -1,12 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import { Footer, Navbar, Notification, ScrollToTop } from './components';
-import { useEffect, useState } from 'react';
-import { Order } from './types/OrderList.types';
+import { useEffect } from 'react';
+
 import { useAppDispatch, useAppSelector } from './app/hooks';
 import { userGet } from './app/user/userSlice';
 
 const Root = () => {
-  const [orders, setOrders] = useState<Order[]>([]);
   const token = useAppSelector(state => state.auth.token);
   const user = useAppSelector(state => state.user.data);
   const dispatch = useAppDispatch();
@@ -23,8 +22,6 @@ const Root = () => {
       <div className='mt-24 min-h-screen text-primary'>
         <Outlet
           context={{
-            orders,
-            setOrders,
             token,
             user,
           }}
