@@ -1,9 +1,10 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./Root";
+import store from './app/store';
+import Root from './Root';
 import {
   ErrorPage,
   Home,
@@ -14,11 +15,13 @@ import {
   SignIn,
   SignUp,
   UserList,
-} from "./routes";
+} from './routes';
+
+import './index.css';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
@@ -27,44 +30,46 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "menu",
+        path: 'menu',
         element: <Menu />,
       },
       {
-        path: "orders",
+        path: 'orders',
         children: [
           {
             index: true,
             element: <OrderList />,
           },
           {
-            path: ":orderId",
+            path: ':orderId',
             element: <OrderItemList />,
           },
         ],
       },
       {
-        path: "reservations",
+        path: 'reservations',
         element: <ReservationList />,
       },
       {
-        path: "users",
+        path: 'users',
         element: <UserList />,
       },
       {
-        path: "login",
+        path: 'login',
         element: <SignIn />,
       },
       {
-        path: "register",
+        path: 'register',
         element: <SignUp />,
       },
     ],
   },
 ]);
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 );
