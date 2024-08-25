@@ -41,19 +41,19 @@ Byte Me Bistro is a full-stack restaurant web application designed to provide a 
 
 #### Backend
 
-- Java: The primary programming language used for developing the backend API, offering a strong and reliable foundation for enterprise-level applications.
-- Spring Boot: A Java-based framework that simplifies the development of RESTful APIs with built-in tools for dependency injection, data persistence, and web services.
+- **Java**: The primary programming language used for developing the backend API, offering a strong and reliable foundation for enterprise-level applications.
+- **Spring Boot**: A Java-based framework that simplifies the development of RESTful APIs with built-in tools for dependency injection, data persistence, and web services.
 
-- Spring Security: A powerful framework within Spring for securing the application, managing authentication, and enforcing role-based access control.
-- JWT Authentication: A method for implementing stateless authentication using JSON Web Tokens, ensuring secure communication between the client and server.
+- **Spring Security**: A powerful framework within Spring for securing the application, managing authentication, and enforcing role-based access control.
+- **JWT Authentication**: A method for implementing stateless authentication using JSON Web Tokens, ensuring secure communication between the client and server.
 
 #### Database
 
-- PostgreSQL: A robust, open-source relational database system that stores and manages all application data, ensuring data integrity and reliability.
+- **PostgreSQL**: A robust, open-source relational database system that stores and manages all application data, ensuring data integrity and reliability.
 
 #### DevOps
 
-- Docker: A containerization platform that packages the frontend, backend, and database into consistent, isolated environments for development and deployment.
+- **Docker**: A containerization platform that packages the frontend, backend, and database into consistent, isolated environments for development and deployment.
 
 ### Installation
 
