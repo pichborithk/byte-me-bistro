@@ -1,4 +1,4 @@
-import { Item } from "../types/Menu.types";
+import { Item } from '../app/item/item.types';
 
 type Props = {
   item: Item;
@@ -6,16 +6,16 @@ type Props = {
 
 const MenuItem = ({ item }: Props) => {
   return (
-    <div className="flex flex-col gap-4 p-2 shadow-full">
+    <div className='flex flex-col gap-4 p-2 shadow-full'>
       <img
-        src="https://i.insider.com/5bd2234bdde867488579161f?width=700"
-        alt="burger"
-        className="w-50 h-40"
+        src='https://i.insider.com/5bd2234bdde867488579161f?width=700'
+        alt='burger'
+        className='w-50 h-40'
       />
       <div>
-        <p className="text-xl">{item.name}</p>
-        <p className="font-gilroyLight font-bold">{item.category}</p>
-        <p className="font-jura">{item.price}$</p>
+        <p className='text-xl'>{item.name}</p>
+        <p className='font-gilroyLight font-bold'>{item.category}</p>
+        <p className='font-jura'>{item.price}$</p>
       </div>
     </div>
   );
