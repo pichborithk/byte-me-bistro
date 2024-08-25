@@ -11,13 +11,13 @@ const OrderList = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  function handleOrderClick(id: number) {
-    navigate(`/orders/${id}`);
-  }
-
   useEffect(() => {
     dispatch(orderGetAll());
   }, []);
+
+  function handleOrderClick(id: number) {
+    navigate(`/orders/${id}`);
+  }
 
   return (
     <div className='mx-auto flex min-h-full w-full max-w-7xl flex-col gap-4 px-8 py-16'>
