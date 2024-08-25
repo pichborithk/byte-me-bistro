@@ -10,7 +10,6 @@ const Menu = () => {
   async function getMenu() {
     try {
       const response = await axios.get(`${import.meta.env.VITE_API_URL}/items`);
-      console.log(response);
       const result: ResponseForm<Item[]> = response.data;
       if (result.data && result.isSuccess) {
         setMenu(result.data);

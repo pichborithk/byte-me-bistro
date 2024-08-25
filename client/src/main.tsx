@@ -11,6 +11,8 @@ import {
   OrderItemList,
   OrderList,
   ReservationList,
+  SignIn,
+  SignUp,
   UserList,
 } from "./routes";
 
@@ -48,6 +50,14 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <UserList />,
+      },
+      {
+        path: "login",
+        element: <SignIn />,
+      },
+      {
+        path: "register",
+        element: <SignUp />,
       },
     ],
   },
