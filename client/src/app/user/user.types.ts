@@ -1,5 +1,3 @@
-import { ResponseForm } from '../../types';
-
 export type User = {
   id: number;
   username: string;

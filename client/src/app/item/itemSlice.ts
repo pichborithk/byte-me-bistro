@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Item } from './item.types';
 import { getMenu } from './itemFetch';
-import { ResponseForm } from '../../types';
 
 type ItemState = {
   loading: boolean;

@@ -1,5 +1,3 @@
-import { ResponseForm } from "../../types";
-
 export type AuthRequest = {
   username: string;
   password: string;

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { ResponseForm } from '../../types';
 import { Item } from './item.types';
 
 const API_URL = import.meta.env.VITE_API_URL;
