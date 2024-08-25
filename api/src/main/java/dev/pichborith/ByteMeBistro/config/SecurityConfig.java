@@ -1,5 +1,6 @@
 package dev.pichborith.ByteMeBistro.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,20 +13,24 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
+
+    private final JwtAuthFilter jwtAuthFilter;
+    private final JwtAuthEntryPoint jwtAuthEntryPoint;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(
                 req -> req.anyRequest().permitAll()
-            );
-//            .sessionManagement(
-//                session -> session.sessionCreationPolicy(STATELESS))
-//            .exceptionHandling(
-//                ex -> ex.authenticationEntryPoint(jwtAuthEntryPoint))
-//            .addFilterBefore(jwtAuthFilter,
-//                             UsernamePasswordAuthenticationFilter.class);
+            )
+            .sessionManagement(
+                session -> session.sessionCreationPolicy(STATELESS))
+            .exceptionHandling(
+                ex -> ex.authenticationEntryPoint(jwtAuthEntryPoint))
+            .addFilterBefore(jwtAuthFilter,
+                             UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
