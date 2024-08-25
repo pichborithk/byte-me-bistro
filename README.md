@@ -1,10 +1,10 @@
 # Byte Me Bistro
 
-### Overview
+## Overview
 
 Byte Me Bistro is a full-stack restaurant web application designed to provide a seamless dining experience for customers. With Byte Me Bistro, users can view the restaurant's menu, place orders, make reservations, and manage their accounts. The application also supports different user roles, including customers, employees, and administrators, each with distinct functionalities.
 
-### Features
+## Features
 
 #### User Roles
 
@@ -27,7 +27,7 @@ Byte Me Bistro is a full-stack restaurant web application designed to provide a 
   - Add, update, or remove menu items.
   - Oversee all reservations and orders.
 
-### Technologies Used
+## Technologies Used
 
 #### Frontend
 
@@ -55,7 +55,7 @@ Byte Me Bistro is a full-stack restaurant web application designed to provide a 
 
 - **Docker**: A containerization platform that packages the frontend, backend, and database into consistent, isolated environments for development and deployment.
 
-### Installation
+## Installation
 
 Prerequisites: Java 17, Node.js, Git, PostgresSQL, Docker (Optional)
 
