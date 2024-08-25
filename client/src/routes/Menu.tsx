@@ -1,34 +1,21 @@
-import { useEffect, useState } from "react";
-import { Item } from "../types/Menu.types";
-import axios from "axios";
-import { ResponseForm } from "../types";
-import { MenuItem } from "../components";
+import { useEffect } from 'react';
+import { MenuItem } from '../components';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { itemGetAll } from '../app/item/itemSlice';
 
 const Menu = () => {
-  const [menu, setMenu] = useState<Item[]>([]);
-
-  async function getMenu() {
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/items`);
-      const result: ResponseForm<Item[]> = response.data;
-      if (result.data && result.isSuccess) {
-        setMenu(result.data);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const menu = useAppSelector(state => state.item.data);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    getMenu();
+    dispatch(itemGetAll());
   }, []);
 
   return (
-    <div className="mx-auto flex max-w-7xl flex-wrap gap-6 px-24 py-40">
-      {menu.map((item, i) => (
-        <MenuItem key={i} item={item} />
-      ))}
+    <div className='mx-auto flex max-w-7xl flex-wrap gap-6 px-24 py-40'>
+      {menu && menu.map((item, i) => <MenuItem key={i} item={item} />)}
     </div>
   );
 };
+
 export default Menu;
