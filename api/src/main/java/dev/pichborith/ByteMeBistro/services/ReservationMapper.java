@@ -10,7 +10,8 @@ public class ReservationMapper {
 
     public ReservationResponse toReservationResponse(Reservation reservation) {
         var user = new UserResponse(reservation.getUser().getId(),
-                                    reservation.getUser().getUsername());
+                                    reservation.getUser().getUsername(),
+                                    reservation.getUser().getRole());
 
         return new ReservationResponse(reservation.getId(),
                                        reservation.getStatus(),

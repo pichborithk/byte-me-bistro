@@ -13,7 +13,7 @@ public class OrderMapper {
 
     public OrderResponse toOrderResponse(Order order) {
         var user = new UserResponse(order.getUser().getId(),
-                                    order.getUser().getUsername());
+                                    order.getUser().getUsername(), order.getUser().getRole());
         return new OrderResponse(order.getId(), order.getStatus(),
                                  order.getCreatedAt(), user);
     }
