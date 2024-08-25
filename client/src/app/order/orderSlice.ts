@@ -14,7 +14,7 @@ const initialState: OrderState = {
   message: '',
 };
 
-export const orderGetAll = createAsyncThunk('item/orderGetAll', getOrders);
+export const orderGetAll = createAsyncThunk('order/orderGetAll', getOrders);
 
 const orderSlice = createSlice({
   name: 'order',
