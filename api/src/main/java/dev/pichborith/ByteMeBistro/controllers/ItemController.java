@@ -23,7 +23,7 @@ public class ItemController {
     @GetMapping
     public ResponseEntity<ResponseForm<List<ItemResponse>>> getMenu() {
         var items = itemService.getAll();
-        var response = new ResponseForm<List<ItemResponse>>(
+        var response = new ResponseForm<>(
             "Get all items in Menu successful", items);
         return ResponseEntity.ok(response);
     }

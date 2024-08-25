@@ -11,8 +11,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
-
 @RestController
 @CrossOrigin(origins = "${CLIENT_URL}")
 @RequestMapping("/api")
@@ -30,9 +28,7 @@ public class AuthController {
         String token = jwtService.generateToken(user);
 
         var auth = new AuthResponse(token);
-        ResponseForm<AuthResponse> response = new ResponseForm<>(
-            "Register new user successful",
-            auth);
+        var response = new ResponseForm<>("Register new user successful", auth);
 
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
@@ -44,9 +40,7 @@ public class AuthController {
         String token = jwtService.generateToken(user);
 
         var auth = new AuthResponse(token);
-        ResponseForm<AuthResponse> response = new ResponseForm<>(
-            "Login successful",
-            auth);
+        var response = new ResponseForm<>("Login successful", auth);
 
         return ResponseEntity.accepted().body(response);
     }
