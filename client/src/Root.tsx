@@ -1,52 +1,32 @@
-import { Outlet } from "react-router-dom";
-import { Footer, Navbar, Notification, ScrollToTop } from "./components";
-import { useEffect, useState } from "react";
-import { Order } from "./types/OrderList.types";
-import { ResponseForm, User } from "./types";
-import axios from "axios";
+import { Outlet } from 'react-router-dom';
+import { Footer, Navbar, Notification, ScrollToTop } from './components';
+import { useEffect, useState } from 'react';
+import { Order } from './types/OrderList.types';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import { userGet } from './app/user/userSlice';
 
 const Root = () => {
   const [orders, setOrders] = useState<Order[]>([]);
-  const [token, setToken] = useState("");
-  const [user, setUser] = useState<User | null>(null);
-
-  async function getUserData(token: string) {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/users`,
-        { headers: { Authorization: `Bearer ${token}` } },
-      );
-      const result: ResponseForm<User> = response.data;
-      if (result.data && result.isSuccess) {
-        console.log(result.data);
-        setUser(result.data);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const token = useAppSelector(state => state.auth.token);
+  const user = useAppSelector(state => state.user.data);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const initialToken: string = localStorage.getItem("TOKEN") || "";
-
-    if (initialToken) {
-      setToken(initialToken);
+    if (token) {
+      dispatch(userGet(token));
     }
-  }, []);
+  }, [token]);
 
   return (
     <>
-      <Navbar token={token} setToken={setToken} setUser={setUser} />
-      <div className="mt-24 min-h-screen text-primary">
+      <Navbar />
+      <div className='mt-24 min-h-screen text-primary'>
         <Outlet
           context={{
             orders,
             setOrders,
             token,
-            setToken,
-            getUserData,
             user,
-            setUser,
           }}
         />
       </div>
