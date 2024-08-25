@@ -1,9 +1,9 @@
 package dev.pichborith.ByteMeBistro.services;
 
-import dev.pichborith.ByteMeBistro.exception.BadRequestException;
-import dev.pichborith.ByteMeBistro.exception.ConflictException;
-import dev.pichborith.ByteMeBistro.exception.InternalException;
-import dev.pichborith.ByteMeBistro.exception.UnauthorizedException;
+import dev.pichborith.ByteMeBistro.exceptions.BadRequestException;
+import dev.pichborith.ByteMeBistro.exceptions.ConflictException;
+import dev.pichborith.ByteMeBistro.exceptions.InternalException;
+import dev.pichborith.ByteMeBistro.exceptions.UnauthorizedException;
 import dev.pichborith.ByteMeBistro.models.user.User;
 import dev.pichborith.ByteMeBistro.models.user.UserRequest;
 import dev.pichborith.ByteMeBistro.repositories.UserRepo;

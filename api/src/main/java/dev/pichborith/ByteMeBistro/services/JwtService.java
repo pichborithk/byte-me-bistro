@@ -1,6 +1,6 @@
 package dev.pichborith.ByteMeBistro.services;
 
-import dev.pichborith.ByteMeBistro.exception.UnauthorizedException;
+import dev.pichborith.ByteMeBistro.exceptions.UnauthorizedException;
 import dev.pichborith.ByteMeBistro.models.user.User;
 import dev.pichborith.ByteMeBistro.repositories.UserRepo;
 import io.jsonwebtoken.Claims;

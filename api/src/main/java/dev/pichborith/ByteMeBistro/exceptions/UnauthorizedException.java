@@ -1,4 +1,4 @@
-package dev.pichborith.ByteMeBistro.exception;
+package dev.pichborith.ByteMeBistro.exceptions;
 
 public class UnauthorizedException extends RuntimeException {
     public UnauthorizedException(Throwable cause) {

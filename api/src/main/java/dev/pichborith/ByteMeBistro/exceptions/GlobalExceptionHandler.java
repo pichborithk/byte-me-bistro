@@ -1,4 +1,4 @@
-package dev.pichborith.ByteMeBistro.exception;
+package dev.pichborith.ByteMeBistro.exceptions;
 
 
 import dev.pichborith.ByteMeBistro.models.ResponseForm;
