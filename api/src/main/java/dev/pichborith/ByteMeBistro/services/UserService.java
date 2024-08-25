@@ -6,13 +6,16 @@ import dev.pichborith.ByteMeBistro.exceptions.InternalException;
 import dev.pichborith.ByteMeBistro.exceptions.UnauthorizedException;
 import dev.pichborith.ByteMeBistro.models.user.User;
 import dev.pichborith.ByteMeBistro.models.user.UserRequest;
+import dev.pichborith.ByteMeBistro.models.user.UserResponse;
 import dev.pichborith.ByteMeBistro.repositories.UserRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 @Service
 @RequiredArgsConstructor
@@ -69,4 +72,16 @@ public class UserService implements UserDetailsService {
                        .orElseThrow(() -> new UsernameNotFoundException(
                            "Username not found"));
     }
+
+    public UserResponse getCurrentUserDetails() {
+        var auth =  SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth == null || !(auth.getPrincipal() instanceof User)) {
+            throw new UnauthorizedException("Invalid token");
+        }
+
+        return userMapper.toUserResponse((User) auth.getPrincipal());
+
+    }
+
 }
