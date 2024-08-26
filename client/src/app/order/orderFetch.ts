@@ -4,9 +4,13 @@ import { Order, OrderItem } from './order.types';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export async function getOrders(): Promise<ResponseForm<Order[]> | void> {
+export async function getOrders(
+  token: string,
+): Promise<ResponseForm<Order[]> | void> {
   try {
-    const response = await axios.get(`${API_URL}/orders`);
+    const response = await axios.get(`${API_URL}/orders`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
     return response.data;
   } catch (error) {
     console.log('Catch get orders error', error);
