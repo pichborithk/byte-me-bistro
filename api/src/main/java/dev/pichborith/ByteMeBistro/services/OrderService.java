@@ -28,6 +28,14 @@ public class OrderService {
                         .toList();
     }
 
+    public List<OrderResponse> getAllByUserId(int userId) {
+
+        return orderRepo.findAllByUserId(userId)
+                        .stream()
+                        .map(orderMapper::toOrderResponse)
+                        .toList();
+    }
+
     public List<OrderItemResponse> getByIdWithItems(int orderId) {
 
         var order = orderRepo.findByIdWithItems(orderId);
