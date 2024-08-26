@@ -8,11 +8,16 @@ import { orderGetAll } from '../app/order/orderSlice';
 
 const OrderList = () => {
   const orders = useAppSelector(state => state.order.data);
+  const token = useAppSelector(state => state.auth.token);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(orderGetAll());
+    if (token) {
+      dispatch(orderGetAll(token));
+    } else {
+      navigate('/');
+    }
   }, []);
 
   function handleOrderClick(id: number) {

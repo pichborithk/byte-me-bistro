@@ -31,20 +31,22 @@ const Navbar = () => {
           >
             Menu
           </Link>
-          <Link
-            to='/orders'
-            className='rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary'
-          >
-            Dashboard
-          </Link>
           {token && (
-            <Link
-              to='/'
-              onClick={handleSignOut}
-              className='rounded-full border-2 border-primary px-4 py-2 hover:bg-primary hover:uppercase hover:text-secondary'
-            >
-              Sign Out
-            </Link>
+            <>
+              <Link
+                to='/orders'
+                className='rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary'
+              >
+                Dashboard
+              </Link>
+              <Link
+                to='/'
+                onClick={handleSignOut}
+                className='rounded-full border-2 border-primary px-4 py-2 hover:bg-primary hover:uppercase hover:text-secondary'
+              >
+                Sign Out
+              </Link>
+            </>
           )}
           {!token && (
             <>
