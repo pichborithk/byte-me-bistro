@@ -6,6 +6,7 @@ import { orderReducer } from './order/orderSlice';
 import { reservationReducer } from './reservation/reservationSlice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { itemsApi } from './services/items';
+import { reservationsApi } from './services/reservations';
 
 const store = configureStore({
   reducer: {
@@ -15,9 +16,12 @@ const store = configureStore({
     order: orderReducer,
     reservation: reservationReducer,
     [itemsApi.reducerPath]: itemsApi.reducer,
+    [reservationsApi.reducerPath]: reservationsApi.reducer,
   },
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(itemsApi.middleware),
+    getDefaultMiddleware()
+      .concat(itemsApi.middleware)
+      .concat(reservationsApi.middleware),
 });
 
 setupListeners(store.dispatch);

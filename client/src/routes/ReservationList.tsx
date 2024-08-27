@@ -1,18 +1,23 @@
 import { Link } from 'react-router-dom';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 import { IconContext } from 'react-icons';
-import { useEffect } from 'react';
 import { ReservationRow } from '../components';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { reservationGetAll } from '../app/reservation/reservationSlice';
+import { useGetReservationsQuery } from '../app/services/reservations';
+// import { useEffect } from 'react';
+// import { useAppDispatch, useAppSelector } from '../app/hooks';
+// import { reservationGetAll } from '../app/reservation/reservationSlice';
 
 const ReservationList = () => {
-  const reservations = useAppSelector(state => state.reservation.data);
-  const dispatch = useAppDispatch();
+  // const reservations = useAppSelector(state => state.reservation.data);
+  // const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    dispatch(reservationGetAll());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(reservationGetAll());
+  // }, []);
+
+  const { data: response } = useGetReservationsQuery();
+
+  const reservations = response?.data;
 
   return (
     <div className='mx-auto flex min-h-full w-full max-w-7xl flex-col gap-4 px-8 py-16'>
