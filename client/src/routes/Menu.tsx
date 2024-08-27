@@ -12,9 +12,9 @@ const Menu = () => {
   //   dispatch(itemGetAll());
   // }, []);
 
-  const response = useGetItemsQuery();
+  const { data: response } = useGetItemsQuery();
 
-  const menu = response.data?.data;
+  const menu = response?.data;
 
   return (
     <div className='mx-auto flex max-w-7xl flex-wrap gap-6 px-24 py-40'>
