@@ -21,7 +21,7 @@ services:
     depends_on:
       - postgres
     environment:
-      SERVER_ADDRESS: localhost
+      SERVER_ADDRESS: 0.0.0.0
       SERVER_PORT: 1337
       DB_SCHEMA: public
       DB_URL: jdbc:postgresql://postgres:5432/byte-me-bistro-dev
