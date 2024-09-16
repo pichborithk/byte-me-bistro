@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ItemRepo extends JpaRepository<Item, Integer> {
 
-    // This is method for query items join with categories if Fetch Type is Lazy
+    // This is method for query items join with category if Fetch Type is Lazy
     @Query("FROM Item i JOIN FETCH i.category")
     List<Item> findAllWithCategory();
 }
