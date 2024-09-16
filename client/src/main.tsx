@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from './app/store';
 import Root from './Root';
 import {
+  CreateReservation,
   ErrorPage,
   Home,
   Menu,
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <SignUp />,
+      },
+      {
+        path: 'reservations/create',
+        element: <CreateReservation />,
       },
     ],
   },

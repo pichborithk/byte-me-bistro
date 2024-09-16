@@ -18,6 +18,7 @@ const Navbar = () => {
   function handleSignOut(): void {
     dispatch(tokenClear());
   }
+
   return (
     <header className='absolute top-0 w-full shadow-full transition-colors duration-500 ease-in-out dark:shadow-slate-800'>
       <section className='mx-auto flex max-w-7xl items-center justify-between px-8 py-2'>
@@ -30,6 +31,12 @@ const Navbar = () => {
             className='rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary'
           >
             Menu
+          </Link>
+          <Link
+            to='/reservations/create'
+            className='rounded-lg border-2 border-transparent px-2 py-2 hover:border-primary hover:bg-primary hover:text-secondary'
+          >
+            Book A Table
           </Link>
           {token && (
             <>
