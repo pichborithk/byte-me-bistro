@@ -1,27 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       screens: {
-        widescreen: { raw: "(min-aspect-ratio: 3/2)" },
-        tallscreen: { raw: "(min-aspect-ratio: 13/20)" },
+        widescreen: { raw: '(min-aspect-ratio: 3/2)' },
+        tallscreen: { raw: '(min-aspect-ratio: 13/20)' },
       },
       fontFamily: {
-        gilroy: ["Gilroy-ExtraBold", "serif"],
-        gilroyLight: ["Gilroy-Light", "serif"],
-        jura: ["Jura", "san-serif"],
+        // gilroy: ["Gilroy-ExtraBold", "serif"],
+        // gilroyLight: ["Gilroy-Light", "serif"],
+        // jura: ["Jura", "san-serif"],
+        dm: ['DM Sans', 'sans-serif'],
+        pfd: ['Playfair Display', 'serif'],
       },
       colors: {
         // primary: { DEFAULT: '#eb455f' },
         // secondary: { DEFAULT: '#fcffe7' },
-        checked: { DEFAULT: "#1bca00" },
-        primary: { DEFAULT: "#173b45" },
-        secondary: { DEFAULT: "#fdffe2" },
+        checked: { DEFAULT: '#1bca00' },
+        primary: { DEFAULT: '#173b45' },
+        secondary: { DEFAULT: '#fdffe2' },
       },
       boxShadow: {
-        full: "0px 1px 6px 1px rgba(0, 0, 0, 0.4)",
+        full: '0px 1px 6px 1px rgba(0, 0, 0, 0.4)',
       },
     },
   },
