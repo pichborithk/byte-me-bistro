@@ -17,19 +17,19 @@ services:
   app:
     container_name: bmb_api
     image: byte-me-bistro-api
-    build: ./api/
+    build: ./
     depends_on:
       - postgres
     environment:
-      SERVER_ADDRESS: 0.0.0.0
-      SERVER_PORT: 1337
+      ADDRESS: 0.0.0.0
+      PORT:
       DB_SCHEMA: public
       DB_URL: jdbc:postgresql://postgres:5432/byte-me-bistro-dev
       DB_USERNAME: admin
       DB_PASSWORD: password
-      SECRET_KEY: secret
-      TOKEN_EXPIRATION: 5
-      CLIENT_URL: http://localhost:5173
+      SECRET_KEY:
+      TOKEN_EXPIRATION:
+      CLIENT_URL:
     ports:
       - "1337:1337"
     networks:
