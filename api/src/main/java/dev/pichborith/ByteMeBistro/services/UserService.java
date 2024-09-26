@@ -16,7 +16,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @RequiredArgsConstructor
 public class UserService implements UserDetailsService {
@@ -54,9 +53,9 @@ public class UserService implements UserDetailsService {
 
         User user = userRepo.findByUsername(username)
                             .orElseThrow(() -> new UnauthorizedException(
-                                String.format("User with name: %s does not exist",
-                                              username)));
-
+                                String.format(
+                                    "User with name: %s does not exist",
+                                    username)));
 
         if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new UnauthorizedException("Incorrect password");
@@ -74,14 +73,12 @@ public class UserService implements UserDetailsService {
     }
 
     public UserResponse getCurrentUserDetails() {
-        var auth =  SecurityContextHolder.getContext().getAuthentication();
+        var auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth == null || !(auth.getPrincipal() instanceof User)) {
             throw new UnauthorizedException("Invalid token");
         }
 
         return userMapper.toUserResponse((User) auth.getPrincipal());
-
     }
-
 }
