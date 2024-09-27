@@ -12,14 +12,20 @@ import SwiftUI
 }
 
 struct MenuView: View {
+    
+    @StateObject private var viewModel = MenuViewModel()
+    
     var body: some View {
         NavigationView {
-            List(MockData.items) { Item in
+            List(viewModel.menu) { Item in
                 ItemCell(item: Item)
 //                    .alignmentGuide(.listRowSeparatorLeading) { _ in -20 }
             }
             .listStyle(.plain)
             .navigationTitle("Menu")
+        }
+        .task {
+            await viewModel.fetchMenu()
         }
     }
 }
