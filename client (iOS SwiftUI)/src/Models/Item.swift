@@ -13,3 +13,15 @@ struct Item: Codable, Identifiable {
     let price: Double
     let category: String
 }
+
+enum RequestError: Error {
+    case invalidURL
+    case requestFailed
+    case invalidData
+}
+
+struct APIResponse<T: Codable>: Codable {
+    let isSuccess: Bool
+    let message: String
+    let data: T
+}
