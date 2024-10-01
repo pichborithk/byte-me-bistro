@@ -6,5 +6,6 @@ public record ItemResponse(
     int id,
     String name,
     BigDecimal price,
+    String imageUrl,
     String category
 ) {}

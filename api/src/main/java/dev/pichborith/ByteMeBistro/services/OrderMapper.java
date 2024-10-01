@@ -13,15 +13,21 @@ public class OrderMapper {
 
     public OrderResponse toOrderResponse(Order order) {
         var user = new UserResponse(order.getUser().getId(),
-                                    order.getUser().getUsername(), order.getUser().getRole());
-        return new OrderResponse(order.getId(), order.getStatus(),
-                                 order.getCreatedAt(), user);
+                                    order.getUser().getUsername(),
+                                    order.getUser().getRole());
+
+        return new OrderResponse(order.getId(),
+                                 order.getStatus(),
+                                 order.getCreatedAt(),
+                                 user);
     }
 
     public OrderItemResponse toOrderItemResponse(OrderItem orderItem) {
         var item = orderItem.getItem();
-        var itemResponse = new ItemResponse(item.getId(), item.getName(),
+        var itemResponse = new ItemResponse(item.getId(),
+                                            item.getName(),
                                             item.getPrice(),
+                                            item.getImageUrl(),
                                             item.getCategory().getName());
 
         return new OrderItemResponse(itemResponse, orderItem.getQuantity());

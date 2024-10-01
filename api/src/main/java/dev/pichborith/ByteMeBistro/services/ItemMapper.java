@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 public class ItemMapper {
 
     public ItemResponse toItemResponse(Item item) {
-        return new ItemResponse(item.getId(), item.getName(),
+        return new ItemResponse(item.getId(),
+                                item.getName(),
                                 item.getPrice(),
+                                item.getImageUrl(),
                                 item.getCategory().getName());
     }
 }
