@@ -17,15 +17,22 @@ struct MenuView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.menu) { Item in
-                ItemCell(item: Item)
+            List(viewModel.menu) { item in
+                ItemCell(item: item)
 //                    .alignmentGuide(.listRowSeparatorLeading) { _ in -20 }
+                    .onTapGesture {
+                        viewModel.isSelectedItem = true
+                        viewModel.selectedItem = item
+                    }
             }
             .listStyle(.plain)
             .navigationTitle("Menu")
         }
         .task {
             await viewModel.fetchMenu()
+        }
+        .sheet(isPresented: $viewModel.isSelectedItem) {
+            ItemView(item: viewModel.selectedItem!, isPresented: $viewModel.isSelectedItem)
         }
     }
 }

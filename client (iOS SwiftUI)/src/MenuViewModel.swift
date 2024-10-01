@@ -10,6 +10,8 @@ import SwiftUI
 @MainActor class MenuViewModel: ObservableObject {
     
     @Published var menu: [Item] = []
+    @Published var selectedItem: Item?
+    @Published var isSelectedItem: Bool = false
     
     func fetchMenu() async {
         do {
