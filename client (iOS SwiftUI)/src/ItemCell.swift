@@ -13,11 +13,10 @@ import SwiftUI
 
 struct ItemCell: View {
     let item: Item
-    let imageUrl = "https://seanallen-course-backend.herokuapp.com/images/appetizers/asian-flank-steak.jpg"
 
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: imageUrl)) { image in
+            AsyncImage(url: URL(string: item.imageUrl)) { image in
                 image.resizable()
                     .scaledToFill()
                     .frame(width: 120, height: 80)

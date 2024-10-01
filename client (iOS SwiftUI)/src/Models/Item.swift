@@ -11,6 +11,7 @@ struct Item: Codable, Identifiable {
     let id: Int
     let name: String
     let price: Double
+    let imageUrl: String
     let category: String
 }
 
