@@ -7,10 +7,11 @@ import java.util.Date;
 
 public record ReservationResponse(
     int id,
-    String status,
+    String name,
+    String phone,
+    int partySize,
     Date date,
     Time time,
-    int partySize,
-    UserResponse user
+    String status
 ) {
 }

@@ -18,13 +18,13 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private String name;
+    private String phone;
+    private int partySize;
 
     private Date date;
     private Time time;
-    private int partySize;
+
     private String status;
 
 }

@@ -9,14 +9,13 @@ import org.springframework.stereotype.Service;
 public class ReservationMapper {
 
     public ReservationResponse toReservationResponse(Reservation reservation) {
-        var user = new UserResponse(reservation.getUser().getId(),
-                                    reservation.getUser().getUsername(),
-                                    reservation.getUser().getRole());
-
         return new ReservationResponse(reservation.getId(),
-                                       reservation.getStatus(),
+                                       reservation.getName(),
+                                       reservation.getPhone(),
+                                       reservation.getPartySize(),
                                        reservation.getDate(),
                                        reservation.getTime(),
-                                       reservation.getPartySize(), user);
+                                       reservation.getStatus()
+        );
     }
 }

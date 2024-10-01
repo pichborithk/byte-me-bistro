@@ -51,12 +51,13 @@ CREATE TABLE orders_items (
     PRIMARY KEY (order_id, item_id)
 );
 
--- Reservations Table: Many-to-One with users
+
 CREATE TABLE reservations (
     id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    party_size INTEGER NOT NULL,
     date DATE NOT NULL,
     time TIME NOT NULL,
-    party_size INTEGER NOT NULL,
-    status VARCHAR(50) NOT NULL,
-    user_id INTEGER REFERENCES users(id)
+    status VARCHAR(50) NOT NULL
 );
