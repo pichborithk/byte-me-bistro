@@ -17,16 +17,16 @@ INSERT INTO categories (name) VALUES ('Desserts');
 INSERT INTO categories (name) VALUES ('Beverages');
 
 -- Insert Menu Items
-INSERT INTO items (name, price, category_id) VALUES ('Spring Rolls', 5.99, 1);
-INSERT INTO items (name, price, category_id) VALUES ('Bruschetta', 6.99, 1);
-INSERT INTO items (name, price, category_id) VALUES ('Stuffed Mushrooms', 7.49, 1);
-INSERT INTO items (name, price, category_id) VALUES ('Grilled Chicken', 12.99, 2);
-INSERT INTO items (name, price, category_id) VALUES ('Beef Stroganoff', 14.99, 2);
-INSERT INTO items (name, price, category_id) VALUES ('Vegetarian Lasagna', 13.49, 2);
-INSERT INTO items (name, price, category_id) VALUES ('Cheesecake', 6.99, 3);
-INSERT INTO items (name, price, category_id) VALUES ('Chocolate Lava Cake', 7.49, 3);
-INSERT INTO items (name, price, category_id) VALUES ('Iced Tea', 2.99, 4);
-INSERT INTO items (name, price, category_id) VALUES ('Soda', 1.99, 4);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Spring Rolls', 5.99, 'https://zenaskitchen.com/wp-content/uploads/2022/02/Pork-Vegetable-Spring-Rolls.jpg', 1);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Bruschetta', 6.99, 'https://thehealthfulideas.com/wp-content/uploads/2021/08/Bruschetta-with-Mozzarella-SQUARE3.jpg', 1);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Stuffed Mushrooms', 7.49, 'https://thegrillingguide.com/wp-content/uploads/2020/06/Stuffed-Mushrooms-1.jpg', 1);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Grilled Chicken', 12.99, 'https://www.allrecipes.com/thmb/UgUZpaTRGWIHEk57yWMhMEjffiY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/16160-juicy-grilled-chicken-breasts-ddmfs-5594-hero-3x4-902673c819994c0191442304b40104af.jpg', 2);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Beef Stroganoff', 14.99, 'https://www.fivehearthome.com/wp-content/uploads/2023/02/Crock-Pot-Beef-Stroganoff-Recipe-Slow-Cooker-Beef-Stroganoff-by-Five-Heart-Home_1200pxFeatured70.jpg', 2);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Vegetarian Lasagna', 13.49, 'https://carveyourcraving.com/wp-content/uploads/2021/12/vegetarian-spinach-lasagna.jpg', 2);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Cheesecake', 6.99, 'https://theloopywhisk.com/wp-content/uploads/2021/05/White-Chocolate-Cheesecake_730px-featured.jpg', 3);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Chocolate Lava Cake', 7.49, 'https://www.melskitchencafe.com/wp-content/uploads/2023/01/updated-lava-cakes7.jpg', 3);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Iced Tea', 2.99, 'https://leelalicious.com/wp-content/uploads/2016/04/Thai-Lemon-Iced-Tea-Recipe.jpg', 4);
+INSERT INTO items (name, price, image_url, category_id) VALUES ('Soda', 1.99, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-URqQ7PXr1CKU_JeqgPLlXcZowG3QzW_UlQ&s', 4);
 
 -- Insert Orders
 INSERT INTO orders (user_id, status) VALUES (1, 'Pending');
