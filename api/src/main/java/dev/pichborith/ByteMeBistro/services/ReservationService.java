@@ -1,5 +1,6 @@
 package dev.pichborith.ByteMeBistro.services;
 
+import dev.pichborith.ByteMeBistro.models.reservation.ReservationRequest;
 import dev.pichborith.ByteMeBistro.models.reservation.ReservationResponse;
 import dev.pichborith.ByteMeBistro.repositories.ReservationRepo;
 import lombok.RequiredArgsConstructor;
@@ -24,5 +25,11 @@ public class ReservationService {
                               .stream()
                               .map(reservationMapper::toReservationResponse)
                               .toList();
+    }
+
+    public ReservationResponse create(ReservationRequest request) {
+        var reservation = reservationMapper.toReservation(request);
+
+        return reservationMapper.toReservationResponse(reservationRepo.save(reservation));
     }
 }
