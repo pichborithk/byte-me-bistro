@@ -48,8 +48,8 @@ INSERT INTO orders_items (order_id, item_id, quantity) VALUES (4, 8, 1); -- 1 Ch
 -- Insert Reservations
 INSERT INTO reservations (name, phone_number, party_size, date, time, status)
 VALUES
-    ('John Doe', '123-456-7890', 4, '2024-10-15', '18:30:00', 'Confirmed'),
-    ('Jane Smith', '987-654-3210', 2, '2024-10-16', '19:00:00', 'Pending'),
-    ('Alice Johnson', '555-123-4567', 3, '2024-10-17', '20:00:00', 'Confirmed'),
-    ('Bob Brown', '123-555-6789', 5, '2024-10-18', '17:45:00', 'Cancelled'),
-    ('Charlie Davis', '999-888-7777', 6, '2024-10-19', '19:30:00', 'Confirmed');
+    ('John Doe', '(123) 456-7890', 4, '2024-10-15', '18:30:00', 'Confirmed'),
+    ('Jane Smith', '(987) 654-3210', 2, '2024-10-16', '19:00:00', 'Pending'),
+    ('Alice Johnson', '(555) 123-4567', 3, '2024-10-17', '20:00:00', 'Confirmed'),
+    ('Bob Brown', '(123) 555-6789', 5, '2024-10-18', '17:45:00', 'Cancelled'),
+    ('Charlie Davis', '(999) 888-7777', 6, '2024-10-19', '19:30:00', 'Confirmed');
