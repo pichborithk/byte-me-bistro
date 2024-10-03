@@ -1,7 +1,7 @@
 package dev.pichborith.ByteMeBistro.models.reservation;
 
-import dev.pichborith.ByteMeBistro.models.user.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +10,7 @@ import java.util.Date;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "reservations")
 public class Reservation {
@@ -19,7 +20,9 @@ public class Reservation {
     private int id;
 
     private String name;
-    private String phone;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
     private int partySize;
 
     private Date date;
