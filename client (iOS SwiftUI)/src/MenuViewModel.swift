@@ -17,7 +17,7 @@ import SwiftUI
         do {
             menu = try await NetworkManager.shared.getMenu()
         } catch {
-            print(error)
+            print(error.localizedDescription)
         }
     }
 }
