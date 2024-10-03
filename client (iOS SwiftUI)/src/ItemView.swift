@@ -57,7 +57,7 @@ struct ItemView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: 54)
                 .background(Color.accentColor)
-                .cornerRadius(10) // Round the corners of the background
+                .cornerRadius(8) // Round the corners of the background
     
                 
             }

@@ -40,9 +40,9 @@ struct ItemQuantityButton: View {
             .disabled(quantity >= 9)
         }
         .frame(maxWidth: .infinity, maxHeight: 54)
-        .cornerRadius(10) // Round the corners of the background
+        .cornerRadius(8) // Round the corners of the background
         .overlay( // Add a border using an overlay with a RoundedRectangle
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.accentColor, lineWidth: 2))
         .controlSize(.large)
       
