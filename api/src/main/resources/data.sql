@@ -46,7 +46,7 @@ INSERT INTO orders_items (order_id, item_id, quantity) VALUES (4, 5, 1); -- 1 Be
 INSERT INTO orders_items (order_id, item_id, quantity) VALUES (4, 8, 1); -- 1 Chocolate Lava Cake (New User Order)
 
 -- Insert Reservations
-INSERT INTO reservations (name, phone, party_size, date, time, status)
+INSERT INTO reservations (name, phone_number, party_size, date, time, status)
 VALUES
     ('John Doe', '123-456-7890', 4, '2024-10-15', '18:30:00', 'Confirmed'),
     ('Jane Smith', '987-654-3210', 2, '2024-10-16', '19:00:00', 'Pending'),

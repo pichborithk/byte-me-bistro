@@ -55,7 +55,7 @@ CREATE TABLE orders_items (
 CREATE TABLE reservations (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
     party_size INTEGER NOT NULL,
     date DATE NOT NULL,
     time TIME NOT NULL,
