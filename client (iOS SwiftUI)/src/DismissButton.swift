@@ -20,7 +20,6 @@ struct DismissButton: View {
             
             Button {
                 isPresented = false
-                print("tapped")
             } label: {
                 Image(systemName: "xmark")
                     .foregroundColor(Color(.label))
